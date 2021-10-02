@@ -1,0 +1,24 @@
+version: '3.5'
+services:
+  db:
+    image: postgres:11
+    env_file:
+      - postgres.env
+    restart: always
+    volumes:
+        - ./postgresql:/var/lib/postgresql/data
+
+  web:
+    image: odoo:13.0
+    depends_on:
+      - db
+    ports:
+      - "8065:8069"
+    volumes:
+      - ./data:/var/lib/odoo
+      - ./etc:/etc/odoo
+      - ./addons:/mnt/extra-addons
+      - ./oca_addons:/mnt/oca-addons
+      - ./edi:/mnt/edi
+    restart: always
+

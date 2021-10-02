@@ -1,0 +1,30 @@
+# C extensions
+*.so
+*.DS_store
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Pycharm
+.idea
+
+# Docker files
+postgresql/
+data/
+#addons/
+oca_addons/
+bubbles_addons/
+edi/
+etc/addons
+etc/sessions
+etc/odoo-server.log
+etc/filestore
+
+# Config files
+etc/odoo.conf
+postgres.env
